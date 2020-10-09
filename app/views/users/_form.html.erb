@@ -1,0 +1,31 @@
+<div class="container">
+  <%= render 'shared/errors', obj: @user %>
+  <%= form_with(model: @user, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |form| %>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class="form-group row">
+        <%= form.label :username, class: "col-2 col-form-label text-light" %>
+          <div class="col-10">
+            <%= form.text_field :username, class: "form-control shadow rouned", placeholder: "Enter a usename" %>
+          </div>
+        </div>
+      <div class="form-group row">
+        <%= form.label :email, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= form.email_field :email, class: "form-control shadow rouned", placeholder: "Enter your email address" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= form.label :password, class: "col-2 col-form-label text-light" %>
+          <div class="col-10">
+            <%= form.password_field :password, class: "form-control shadow rouned", placeholder: "Choose a password" %>
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+          <%= form.submit class: "btn btn-outline-light btn lg" %><br>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to '[ Cancel and Return to article listing ]', articles_path, class: "text-info text-warning" %>
+  </div>
+</div>
